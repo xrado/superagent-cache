@@ -196,7 +196,7 @@ module.exports = function(agent, cache){
     function keygen(req, cProps){
       var cleanParams = null;
       var cleanOptions = null;
-      var params = !isEmpty(req.qs) ? req.qs : arrayToObj(req.qsRaw);
+      var params = !isEmpty(req._query) ? req._query.join('&') : arrayToObj(req.qsRaw);
       if(!params && req.req){
         params = stringToObj(req.req.path);
       }
