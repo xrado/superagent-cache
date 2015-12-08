@@ -167,6 +167,7 @@ module.exports = function(agent, cache){
             }
 
             if(!err && response){
+              key = key.replace('"method":"PUT"','"method":"GET"');
               superagent.cache.del(key, function (){
                 callbackExecutor(cb, err, response, key);
               });
