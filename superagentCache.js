@@ -19,7 +19,7 @@ module.exports = function(agent, cache){
   if(!superagent.patchedBySuperagentCache){
     var Request = superagent.Request;
     var props = {doQuery: true, cacheWhenEmpty: true};
-    var supportedMethods = ['GET', 'HEAD', 'CREATE', 'PUT', 'DELETE'];
+    var supportedMethods = ['GET', 'HEAD', 'POST', 'PUT', 'DELETE'];
     var cacheableMethods = ['GET', 'HEAD'];
     superagent.patchedBySuperagentCache = true;
 
